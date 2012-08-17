@@ -7,13 +7,41 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "questions.tex",
+			"settings":
+			{
+				"buffer_size": 505,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chap/1-introduction.tex",
+			"settings":
+			{
+				"buffer_size": 1226,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chap/2-data_center_env.tex",
+			"settings":
+			{
+				"buffer_size": 4282,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 172.0,
+		"height": 52.0,
 		"selected_items":
 		[
+			[
+				"brows",
+				"Preferences: Browse Packages"
+			],
 			[
 				"git comm",
 				"Git: Commit"
@@ -46,14 +74,15 @@
 		"menu_visible": true,
 		"show_minimap": false,
 		"show_open_files": false,
-		"show_tabs": false,
+		"show_tabs": true,
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
 	"file_history":
 	[
-		"/home/cap/uni/storage/distim/book/questions.tex",
 		"/home/cap/uni/storage/distim/book/chap/1-storage_sys.tex",
+		"/home/cap/uni/storage/distim/book/ism_book.sublime-project",
+		"/home/cap/uni/storage/distim/book/questions.tex",
 		"/home/cap/uni/storage/distim/book/Makefile",
 		"/home/cap/uni/storage/distim/sheet2/task1/document.tex",
 		"/home/cap/uni/storage/distim/sheet2/task2c/document.tex",
@@ -97,8 +126,88 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "questions.tex",
+					"settings":
+					{
+						"buffer_size": 505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "chap/1-introduction.tex",
+					"settings":
+					{
+						"buffer_size": 1226,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								630,
+								630
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chap/2-data_center_env.tex",
+					"settings":
+					{
+						"buffer_size": 4282,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LaTeX/LaTeX.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
