@@ -1,0 +1,86 @@
+\section{Storage Systems}
+
+\subsection*{Why is RAID 1 not a substitute for a backup?} % (fold)
+\label{sub:why_is_raid_1_not_a_substitute_for_a_backup_}
+	Stores only the current state of the system.
+	Backups store distinct points in time to whom the system can be reverted.
+% subsection why_is_raid_1_not_a_substitute_for_a_backup_ (end)
+
+\subsection{Research RAID 6 and its second parity computation.} % (fold)
+\label{sub:research_raid_6_and_its_second_parity_computation_}
+	The second parity can be calculated in various ways.
+	The easiest way is to create a second XOR.
+	Ususally its is done via these formulas with a shifted Q
+	and P being the standard XOR over the stripes.
+
+	\begin{eqnarray}
+		P &=& D_0 \oplus D_1 \oplus D_2 \oplus \dotsc \oplus D_n \\
+		Q &=& g^0D_0 \oplus g^1D_1 \oplus g^2D_2 \oplus \dotsc g^nD_n 
+	\end{eqnarray}
+	Where g is a generator of a Galois Field. 
+% subsubsection research_raid_6_and_its_second_parity_computation_ (end)
+
+\subsection{Explain the process of data recovery in case of a drive failure in RAID 5.} % (fold)
+\label{sub:explain_the_process_of_data_recovery_in_case_of_a_drive_failure_in_raid_5_}
+	RAID 5 uses striping of data and distributes the parity information over all disks.
+	In the case of a failure of a single  data can be restored by reversing the XOR operation
+	that was used to generate the parity information.
+	As the partiy information is distributed over all drives in RAID 5,
+	some of it is lost if a disk fails.
+	This is not a problem becaus it can be generated again form the data itself.
+	The recovery works blockwise,
+	like the data is stripe accross the drives.
+	The remaining data and if availabel the parity information get XORed with each other
+	and thereby generates the missing block.
+	As described before,
+	if the parity information is missing it is can be calculated by XORing the data blocks 
+	with themselfs.
+
+	In an ideal case,
+	this data is then saved to an hot spare disk,
+	which repalacs the disk that failed.
+% subsection explain_the_process_of_data_recovery_in_case_of_a_drive_failure_in_raid_5_ (end)
+
+\subsubsection{What are the benefits of using RAID 3 in a backup application?} % (fold)
+\label{ssub:what_are_the_benefits_of_using_raid_3_in_a_backup_application_}
+	With RAID 3 one benefits from havin fast sequential write and reads like in RAID 0.
+	RAID 3 adds parity information to the setup of RAID 1 on a seperate disk.
+	This allows to recover from the failure of a one disk in the setup.
+	Also RAID 3 does not need huge amounts of additional diskspace,
+	as the parity information is the only data generated additionaly.
+% subsubsection what_are_the_benefits_of_using_raid_3_in_a_backup_application_ (end)
+
+\subsection{Discuss the impact of random and sequential I/Os in different RAID configurations.} % (fold)
+\label{sub:discuss_the_impact_of_random_and_sequential_i_os_in_different_raid_configurations_}
+
+	\subsubsection{RAID 3} % (fold)
+	\label{ssub:raid_3}
+		\emph{Sequential I/O} can be handle very well by RAID 3,
+		as it can spread the I/O with striping over all the disks.
+		\emph{Random I/O} reads can be handle very well too,
+		but it is not that good with sequential writes.
+		This is due to the write penalty,
+		which occurs in the creation of the parity information.
+		Overall the speed can be described by $(n-1)X$,
+		where n is the number of used drives and X the speed of the drives.
+	% subsubsection raid_3 (end)
+
+	\subsubsection{RAID 5} % (fold)
+	\label{ssub:raid_5}
+		\emph{Sequential I/O} can be handle very well by RAID 5,
+		as it can be spread over all the disk by striping.
+		\emph{Random I/O} can be handle well to.
+		The write penalty is the same as in RAID 3,
+		but as the parity information are not stored on a dedicated disk,
+		it can also be spread.
+		The formula described in RAID 3 also holds for RAID 5.
+	% subsubsection raid_5 (end)
+
+	\subsubsection{RADI 1/0} % (fold)
+	\label{ssub:radi_1_0}
+		RAID 1/0 delivers the best performance for \emph{Sequential I/O} and 
+		\emph{Random I/O}, as striping can be used without the write penalty
+		for the parity information.
+		The perfomance increases linear with the number of disks.	
+	% subsubsection radi_1_0 (end)
+% subsection discuss_the_impact_of_random_and_sequential_i_os_in_different_raid_configurations_ (end)
