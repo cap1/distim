@@ -1,0 +1,37 @@
+\section{Intelligent Storage Systems} % (fold)
+\label{sec:intelligent_storage_systems}
+
+\subsection{Research Cache Cohereny mechanisms and how they address multiple shared cache environments!} % (fold)
+\label{sub:research_cache_cohereny_mechanisms_and_how_they_address_multiple_shared_cache_environments}
+	In multiple cache environments one either needs a bus that allows inter cache communication (Bus sniffing/snooping)
+	or a centralized entity that know about the contents of each cache.
+	Each cache page needs a flag to determine if the data is valid
+	and has been written to the disk.
+% subsection research_cache_cohereny_mechanisms_and_how_they_address_multiple_shared_cache_environments (end)
+
+\subsection{Which type of application benefits most from bypassing the write cache?} % (fold)
+\label{sub:which_type_of_application_benefits_most_from_bypassing_the_write_cache_}
+	Any application that does write large amounts of sequential data.
+	This kind of application does not benefit from a shorter write time,
+	which can be produced with a write cache.
+% subsection which_type_of_application_benefits_most_from_bypassing_the_write_cache_ (end)
+
+\subsection{Research cache parameters!} % (fold)
+\label{sub:research_cache_parameters_}
+	\begin{description}
+		\item[Cache page size] \hfill \\
+			Size of a page in the cache.
+			Should be equal to the block in the underlying disk.
+		\item[Cache allocation] \hfill \\
+			Read or write orientation of the cache.
+			Depends on purpose.
+		\item[Pre-fetch type] \hfill \\
+			What should be cached without request.
+			Depends on the application.
+		\item[Write aside cache] \hfill \\
+			Threshold for the amout of requested I/O operations.
+			If it is exceeded the writes go directly to the disk.
+	\end{description}
+% subsection research_cache_parameters_ (end)
+
+% section intelligent_storage_systems (end)
