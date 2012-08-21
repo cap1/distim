@@ -3,6 +3,17 @@
 
 \subsection{What is zoning?} % (fold)
 \label{sub:what_is_zoning}
+	Zoning is an FC switch function
+	that enables node ports within the fabric to be logically segmented
+	into groups and to communicate with each other within the group.
+
+	Whenever a change takes place in the name server database,
+	the fabric controller sends a Rgeistered State Change Notification(RSCN)
+	to all the nodes impacted.
+	This can generated large amounts of fabric-management traffic,
+	which might impact host-to-storrage traffic.
+	With enabled zoning,
+	only the affected nodes in a zone get the RSCN from the fabric.
 
 \subsubsection{Where is WWN zoning preferred over port zoning?} % (fold)
 \label{ssub:where_is_wwn_zoning_preferred_over_port_zoning}
