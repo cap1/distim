@@ -63,6 +63,21 @@
 \subsection{How does flow control work in an FC network?} % (fold)
 \label{sub:how_does_flow_control_work_in_an_fc_network}
 
+	\subsubsection{BB_Credit} % (fold)
+	\label{ssub:bb_credit}
+		This mechanism limits the maximal nuember of frames
+		that can be present over a link at any point in time.
+		The transmitting port keeps track of the free receiver buffers
+		and sends as long as the count is greater than 0.
+		Receiver Ready (R_RDY) primitives are used to indicate a freed buffer.
+	% subsubsection bb_credit (end)
+
+	\subsubsection{EE_Credit} % (fold)
+	\label{ssub:ee_credit}
+		Initiator and target can use this mechanism to exchange EE_Credit parameters.
+		The function is similar to BB_Credit,
+		but provides only flow controll for traffic in the classes 1 and 2.
+	% subsubsection ee_credit (end)
 % subsection how_does_flow_control_work_in_an_fc_network (end)
 
 \subsection{Explain storage migration using block-level storage virtualization. Compare this to tradiction migration methods.} % (fold)
