@@ -80,10 +80,17 @@
 	% subsubsection ee_credit (end)
 % subsection how_does_flow_control_work_in_an_fc_network (end)
 
-\subsection{Explain storage migration using block-level storage virtualization. Compare this to tradiction migration methods.} % (fold)
-\label{sub:explain_storage_migration_using_block_level_storage_virtualization_compare_this_to_tradiction_migration_methods_}
-
-% subsection explain_storage_migration_using_block_level_storage_virtualization_compare_this_to_tradiction_migration_methods_ (end)
+\subsection{Explain storage migration using block-level storage virtualization. Compare this to traditional migration methods.} % (fold)
+\label{sub:explain_storage_migration_using_block_level_storage_virtualization_compare_this_to_tranditional_migration_methods}
+	The virtualization layer allows a better migration in comparison to tranditional migration methods.
+	As this layer handles the access to the underlying block devices,
+	migration can take place while they are online.
+	Applications can still access the data
+	via the addresses on the virtualization layer.
+	As the virtualization layer handles the back-end migration
+	it is also possible to migrate in between data centers.\\
+	These techniques are especially usefull in a multivendor environment.
+% subsection explain_storage_migration_using_block_level_storage_virtualization_compare_this_to_traditional_migration_methods (end)
 
 \subsection{How do VSANs improve the manageability of an FC SAN?} % (fold)
 \label{sub:how_do_vsans_improve_the_manageability_of_an_fc_san}
