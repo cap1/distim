@@ -44,7 +44,20 @@
 
 \subsection{Discuss the roles of the name server and fabric controller in an FC-switched fabric!} % (fold)
 \label{sub:discuss_the_roles_of_the_name_server_and_fabric_controller_in_an_fc_switched_fabric}
+	The \emph{name server} keeps track of every connected node.
+	It enables information exchange between the switches inside the fabric,
+	to ensure a distributed and synchronized name service.
+	It is located at the predefined adress \texttt{FFFFFE}.
 
+	The \emph{fabric controller},
+	which is located at the predefined address \texttt{FFFFFD},
+	provides services for node ports and switches.
+	It manages the Registerd State Change Notifications (RSCNs)
+	who are send to registerd node ports in the fabric
+	in case off a change in the fabric.
+	It also generate Switch Registerd State Change Notifications (SW-RSCNs)
+	to every other domain (swith) in the fabric to
+	keep their name services updated.
 % subsection discuss_the_roles_of_the_name_server_and_fabric_controller_in_an_fc_switched_fabric (end)
 
 \subsection{How does flow control work in an FC network?} % (fold)
