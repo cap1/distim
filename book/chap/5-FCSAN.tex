@@ -27,12 +27,19 @@
 	but be replaced in case of failure.
 	Long time Archiving might be a usecase.	
 % subsubsection where_is_port_zoning_preferred_over_wwn_zoning (end)
-
 % subsection what_is_zoning (end)
 
 \subsection{Describe the process of assigning an FC address to a node when logging into a network for the first time!} % (fold)
 \label{sub:describe_the_process_of_assigning_an_fc_address_to_a_node_when_logging_into_a_network_for_the_first_time}
-
+	This process is called \emph{fabric login}(FLOGI) which is performed between an N and a F_Port.
+	To log on o the fabric the node sends a FLOGI frame with its WWNN and WWPN parameters
+	to the login service at the predefined FC address \texttt{FFFFFE} (Fabric Login Server).
+	The service accepts the login with an Accept (ACC) frame
+	which includes the assigned FC address for the node.
+	Now the node registers itself with the local Name Server on the switch,
+	with its WWNN, WWPN, port type, class of service and assigned FC address.
+	After loging in the N_Port can query the name server database for information
+	about all other logged in ports.
 % subsection describe_the_process_of_assigning_an_fc_address_to_a_node_when_logging_into_a_network_for_the_first_time (end)
 
 \subsection{Discuss the roles of the name server and fabric controller in an FC-switched fabric!} % (fold)
