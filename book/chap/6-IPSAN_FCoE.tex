@@ -3,7 +3,12 @@
 
 \subsection{Describe the process of authentication in iSCSI.} % (fold)
 \label{sub:describe_the_process_of_authentication_in_iscsi}
-
+	iSCSI usually handles the authentication with Challenge-Handshake Authentication Protocol (CHAP).
+	This protocol requires a shared secret.
+	The initiator sends the random value to the target 
+	and both calculate the digest of the shared secret and this random value.
+	The target sends the digest back to the initiator who completes authentication,
+	if the digest and therby the shared secrets are identical.
 % subsection describe_the_process_of_authentication_in_iscsi (end)
 
 \subsection{Why should an MTU value of at least 2500 bytes be configured in a bridged iSCSI environment?} % (fold)
