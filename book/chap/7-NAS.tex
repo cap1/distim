@@ -28,7 +28,7 @@
 	to be sent over an network without fragmentation.
 
 	Larger frames are more efficient,
-	as lesser raw bandwith is used
+	as lesser raw bandwidth is used
 	and they can hold more payload per package.
 	This helps smoothen sudden I/O bursts.\\
 	However not all vendors use the same MTU
@@ -36,11 +36,21 @@
 % subsection how_do_jumbo_frames_affect_the_nas_perfomance (end)
 \subsection{Research the file access and sharing features of pNFS!} % (fold)
 \label{sub:research_the_file_access_and_sharing_features_of_pnfs}
-
+	\emph{pNFS} separates the file meta-data and the data itself.
+	A dedicated pNFS server manages the meta-data of the files.
+	This includes name, location access control list (ACL) and other attributes.
+	The pNFS server enables the client then to directly access
+	the data on the storage array.
 % subsection research_the_file_access_and_sharing_features_of_pnfs (end)
-\subsection{How dies file-level virtualization ensure non disruptive file mobility?} % (fold)
-\label{sub:how_dies_file_leve_virtualization_ensure_nondisruptive_file_mobility}
-
-% subsection how_dies_file_leve_virtualization_ensure_nondisruptive_file_mobility (end)
+\subsection{How does file-level virtualization ensure non disruptive file mobility?} % (fold)
+\label{sub:how_does_file_leve_virtualization_ensure_nondisruptive_file_mobility}
+	With file-level virtualization,
+	the clients do not access the files directly on the storage array
+	but on the virtualization layer.
+	As the virtualization application now manages the location off the files
+	on the storage arrays,
+	they can be moved in a transparent manner for the clients.
+	The file locations are now logical instead of physical.
+% subsection how_does_file_leve_virtualization_ensure_nondisruptive_file_mobility (end)
 
 % section network_attached_storage (end)
