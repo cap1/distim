@@ -13,7 +13,10 @@
 
 \subsection{Why should an MTU value of at least 2500 bytes be configured in a bridged iSCSI environment?} % (fold)
 \label{sub:why_should_an_mtu_value_of_at_least_2500_bytes_be_configured_in_a_bridged_iscsi_environment}
-
+	A typical Fibre Channel data frame has a 2112-byte payload.
+	Adding the 24-byte header and an FCS,
+	one should atleast configure the MTU accordingly to at least 2500 bytes. \\
+	As jumbo frames should be used in FCoE environments the MTU should be even higher.
 % subsection why_should_an_mtu_value_of_at_least_2500_bytes_be_configured_in_a_bridged_iscsi_environment (end)
 
 \subsection{Why does the lossy nature of standart Ethernet make it unsuitable for a layered FCoE implementation? How does CEE address this problem?} % (fold)
