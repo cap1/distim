@@ -42,6 +42,28 @@
 
 \subsection{Compare various data center protocols that use Ethernet as the physical medium for transporting storage traffic!} % (fold)
 \label{sub:compare_various_data_center_protocols_that_use_ethernet_as_the_physical_medium_for_transporting_storage_traffic}
+	\subsubsection{iSCSI} % (fold)
+	\label{ssub:iscsi}
+		\begin{itemize}
+			\item encapsulate SCSI I/O in IP packages
+			\item with a iSCSI transparent usage of a storage array in the connected FC SAN is possible
+		\end{itemize}
+	% subsubsection iscsi (end)
+	\subsubsection{FCIP} % (fold)
+	\label{ssub:fcip}
+		\begin{imtemize}
+			\item encapsulate FC frames in IP packages
+			\item allows connection of distant FC SANs via IP networks
+		\end{imtemize}
+	% subsubsection f\item encapsulate FC frames in IP packagescip (end)
+	\subsubsection{FCoE} % (fold)
+	\label{ssub:fcoe}
+		\begin{itemize}
+			\item converges Ethernet and FC traffic over a single physical link
+			\item FCoE switches can leverage existing IP infrastructure for FC traffic
+		\end{itemize}
+	% subsubsection fcoe (end)
+
 
 % subsection compare_various_data_center_protocols_that_use_ethernet_as_the_physical_medium_for_transporting_storage_traffic (end)
 
