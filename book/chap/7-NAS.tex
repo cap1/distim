@@ -3,7 +3,22 @@
 
 \subsection{How can the performance of a NAS be affected by the TCP windows size?} % (fold)
 \label{sub:how_can_the_performance_of_a_nas_be_affected_by_the_tcp_windows_size}
+	The \emph{TCP window size} is the maximum amount of data
+	that can be sent at any time over a TCP connection.
+	After the definded amount of data has been sent,
+	the sender has to wait for the receivers acknowledgement
+	to send more data.
+	The receiver acknowledges the acctual received amount of bytes,
+	so that the sender can send the difference to the window sizes.
+	This is done to ensure that all packages have arrived at the receiver.
 
+	If the value of the \emph{TCP window size} is too low,
+	the overall throuhput of the network might be lower than possible.
+	Theoretically the \emph{TCP window size} should be set to:
+	\begin{equation}
+		available\ bandwith * round\ trip\ time = TCP\ window\ size
+	\end{equation}
+	
 % subsection how_can_the_performance_of_a_nas_be_affected_by_the_tcp_windows_size (end)
 \subsection{How do jumbo frames affect the NAS perfomance?} % (fold)
 \label{sub:how_do_jumbo_frames_affect_the_nas_perfomance}
