@@ -13,7 +13,23 @@
 
 \subsection{Why does the lossy nature of standart Ethernet make it unsuitable for a layered FCoE implementation? How does CEE address this problem?} % (fold)
 \label{sub:why_does_the_lossy_nature_of_standart_ethernet_make_it_unsuitable_for_a_layered_fcoe_implementation_how_does_cee_address_this_problem}   	
+	Standard Ethernet is lossy,
+	which allows frames to be dropped or lost in transmission.
+	Usually higher level protocols like TCP take care of the correct order of transmission,
+	but they are not present in FCoE and would lead to a large overhead.
 
+	The following technologies are part of CEE to prevent packet loss in FCoE environments:\\
+	\emph{Priority-based Flow Control} (PFC) makes use of the IEEE 802.3X Ethernet PAUSE control frame.
+	This frame is send by the receiver if his buffers are full,
+	to notify the sender and make him stop sending packets
+	so that no packet is lost
+	As the PAUSE control frame blocks the communication on the entire link,
+	PFC creates eight seperate virtual links to prevent a single full buffer from blocking
+	all the communication.
+
+	\emph{Congestion Notification} allows the receivin FCoE switches to tell the sender to
+	reduce the data transfer rate.
+	These notifications are route backwars to the data stream so that the host can limit the rate.
 % subsection why_does_the_lossy_nature_of_standart_ethernet_make_it_unsuitable_for_a_layered_fcoe_implementation_how_does_cee_address_this_problem (end)
 
 \subsection{Compare various data center protocols that use Ethernet as the physical medium for transporting storage traffic!} % (fold)
