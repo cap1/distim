@@ -24,7 +24,7 @@
 		which a system is in condition to perform its intendet function.
 		It can be described with system up- and downtime \ref{eq:IA_system}
 		or with MTBF and MTTR \ref{eq:IA_MTBF_MTTR}.
-		
+
 		\begin{equation}
 			IA = system\ uptime/(system uptime + system downtime)
 		\end{equation}
@@ -36,4 +36,37 @@
 		\label{eq:IA_MTBF_MTTR}
 	% subsubsection availability (end)
 % subsection formulas_in_business_continuity (end)
+
+\subsection{Business Continuity Terms} % (fold)
+\label{sub:business_continuity_terms}
+	\subsection{Recovery-Point Objective} % (fold)
+	\label{sub:recovery_point_objective}
+		Point in time to which systems and data must be recovered after an outage.
+		This defines the amount of data that can be lost that a business can endure.
+		Based on the \emph{RPO} business can schedule backups.
+	% subsection recovery_point_objective (end)
+
+	\subsection{Recovery-Time Objective} % (fold)
+	\label{sub:recovery_time_objective}
+		The time within a system
+		and application must be recovered after an outage.
+		The \emph{RTP} defines the amount of downtime
+		that a business can endure.
+		Based on the RTO businesses can plan their disaster recovery plans.
+	% subsection recovery_time_objective (end)
+
+	\subsection{Hot- and Coldsite} % (fold)
+	\label{sub:hot_and_coldsite}
+		A \emph{Hotsite} is a site where a business can move its operations to
+		in the event of a disaster.
+		The site contains everything necessary,
+		including hardware and software.
+		The equipement is available and running at all times.
+
+		A \emph{Coldsite} contains the same things as a Hotsite,
+		but it just contains the minimum require infrastructure.
+		Also it is not active.
+	% subsection hot_and_coldsite (end)
+% subsection business_continuity_terms (end)
+
 % section introduction_to_business_continuity (end)
