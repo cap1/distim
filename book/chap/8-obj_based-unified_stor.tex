@@ -5,15 +5,20 @@
 \label{sub:explain_the_storage_and_retrieval_process_for_block_file_and_object_access_in_a_unified_storage_system!}
 	\subsubsection{Block} % (fold)
 	\label{ssub:block}
-	
+		In case of a block level request,
+		the unified storage systems just forwards the iSCSI, FC
+		or FCoE commands to storage processor.
 	% subsubsection block (end)
 	\subsubsection{File} % (fold)
 	\label{ssub:file}
-	
+		File access is acomplished via NAS head that is conected to the storage processor.
+		This NAS head transforms the file request into block I/O for the storage processor.
+		The unified storage can be accessed by NFS or CIFS.
 	% subsubsection file (end)
 	\subsubsection{Object} % (fold)
 	\label{ssub:object}
-	
+		With an OSD Node the object request are translated to block I/O for the storage processor.
+		This enables Object access via REST and SOAP or any other defined API.
 	% subsubsection object (end)
 % subsection explain_the_storage_and_retrieval_process_for_block_file_and_object_access_in_a_unified_storage_system! (end)
 
@@ -32,7 +37,8 @@
 
 \subsection{When is unified storage a suitable option? Compare to traditional storage solutions.} % (fold)
 \label{sub:when_is_unified_storage_a_suitable_option_compare_to_traditional_storage_solutions}
-
+	Unified storage offers block, file and object level acces to data
+	trough a single solution.
+	This makes it especially intresting for unstructured data.
 % subsection when_is_unified_storage_a_suitable_option_compare_to_traditional_storage_solutions (end)
-
 % section object_based_and_unified_storage (end)
