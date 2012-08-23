@@ -1,9 +1,31 @@
 \section{Backup and Archive} % (fold)
 \label{sec:backup_and_archive}
 
-\subsection{Describe different types of Backup.} % (fold)
+\subsection{Describe different Backup-types and -granularities.} % (fold)
 \label{sub:describe_different_types_of_backup}
+	\subsection{Full Backup} % (fold)
+	\label{sub:fullbackup}
+		Copies the complete data on the production volumes.
+		Provides the fastest recovery,
+		but takes the largest amount of data
+		and the longest time to perform the backup.
+	% subsection fullbackup (end)
 
+	\subsection{Incremental Backup} % (fold)
+	\label{sub:incremental_backup}
+		Incremental backups just contain the data that has accutally changed
+		since the last full or incremental backup.
+		Takes less space,
+		but requires more time to restore
+		as it is more complex to perform.
+	% subsection incremental_backup (end)
+
+	\subsection{Comulative Backup} % (fold)
+	\label{sub:comulative_backup}
+		Copies all the data that has changed since the last full backup.
+		This method takes longer than an incremental backup
+		but it is faster to restore.
+	% subsection comulative_backup (end)
 % subsection describe_different_types_of_backup (end)
 
 \subsection{List and explain the considerations and challenges in using tape as backup technology!} % (fold)
