@@ -1,0 +1,39 @@
+\section{Introduction to Business Continuity} % (fold)
+\label{sec:introduction_to_business_continuity}
+
+\subsection{Formulas in Business Continuity} % (fold)
+\label{sub:formulas_in_business_continuity}
+
+	\subsubsection{Mean Time Between Failure (MTBF)} % (fold)
+	\label{ssub:mean_time_between_failure}
+		It is the average time available for system or component
+		to perform its normal operations between failures expressed in hours.
+	% subsubsection mean_time_between_failure_ (end)
+
+	\subsubsection{Mean Time To Recover (MTTR)} % (fold)
+	\label{ssub:mean_time_to_recover}
+		Describes the time to required to repair a failed component.
+		It includes the time it takes to detect the fault,
+		until it is fully resolved
+		and the system is running again.
+	% subsubsection mean_time_to_recover_ (end)
+
+	\subsubsection{Information Availability} % (fold)
+	\label{ssub:availability}
+		Information Availability (IA) is the time period during
+		which a system is in condition to perform its intendet function.
+		It can be described with system up- and downtime \ref{eq:IA_system}
+		or with MTBF and MTTR \ref{eq:IA_MTBF_MTTR}.
+		
+		\begin{equation}
+			IA = system\ uptime/(system uptime + system downtime)
+		\end{equation}
+		\label{eq:IA_system}
+
+		\begin{equation}
+			IA = MTBF/(MTBF + MTTR)
+		\end{equation}
+		\label{eq:IA_MTBF_MTTR}
+	% subsubsection availability (end)
+% subsection formulas_in_business_continuity (end)
+% section introduction_to_business_continuity (end)
