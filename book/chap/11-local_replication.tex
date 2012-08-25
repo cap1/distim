@@ -42,21 +42,51 @@
 				An advantage is the vendor independence
 				and as LVMs are usually part of the OS no additional licensing is necessary.
 			\item[File-System snapshot] \hfill \\
-				This FS snapshot is a prointer based replica,
-				that can be impelemented either on the FS or LVM level
+				This FS snapshot is a pointer based replica,
+				that can be implemented either on the FS or LVM level
 				and uses the Copy on First Write (CoFW) principle to create the snapshots.
-				It just reqires a fraction of the space used by the production FS.
+				It just requires a fraction of the space used by the production FS.
 
-				When a snaphsot is created,
+				When a snapshot is created,
 				a bit and a blockmap are created in the metadata of the Snap FS.
 				When a write occurs on the production FS this is held.
-				The data previously on this postition is copied to the Snap FS.
-				The new data on this postion is then copied to the Snap FS.
+				The data previously on this position is copied to the Snap FS.
+				The new data on this position is then copied to the Snap FS.
 				The block and the bit map are changed to represent which data is stored.
 				Then the I/Os goes to the production OS.
 				%O RLY?
 		\end{description}
 	% subsubsection host_based_replication (end)
+
+	\subsubsection{Storage Array-based local replication} % (fold)
+	\label{ssub:storage_array_based_local_replication}
+		The array operating environment takes care of the replication process.
+		The replica is located in the same place as the source.
+		After the replication the replica is accessible by an alternative host.
+
+		\begin{description}
+			\item[Full-Volume mirroring] \hfill \\
+				The source gets copied to the target (the replica).
+				New updates on the source are also performed on the target.
+				After finishing the replication the target can be detached from the source.
+			\item[Pointer-based full-volume replication] \hfill \\
+				The Point in time to which this replica corresponds is the time 
+				the replication is initiated.
+				In \emph{Copy on First Access} (CoFA) the data is copied to the replica,
+				if any changes are made to the procution host.
+				The data that is accessed or should be overwritten is the send to
+				the replica.
+
+				Instead of the lazy CoFA approach,
+				one can also copy the source in the background.
+				If I/O occurs on a block that has not been copied yet,
+				this block is copied preferentially.
+				This \emph{Full Copy} mode requires the replica to be as large
+				as the production volume.
+			\item[Pointer-based virtual replication] \hfill \\
+				Uses a virtual device that uses pointer to a save location.
+		\end{description}
+	% subsubsection storage_array_based_local_replication (end)
 
 % subsection describe_local_replication_technologies (end)
 \subsection{Research factors that determine storage capacity requirements for a save location in pointer-based virtual replication.} % (fold)
