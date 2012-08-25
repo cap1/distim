@@ -22,11 +22,43 @@
 	and apply them in the correct order.
 % subsection research_various_techniques_used_to_ensure_consistency_of_a_local_replica (end)
 
-\subsection{Describe the uses of local replica in various business operations.} % (fold)
-\label{sub:describe_the_uses_of_local_replica_in_various_business_operations}
-	
-% subsection describe_the_uses_of_local_replica_in_various_business_operations (end)
+\subsection{Describe local replication technologies!} % (fold)
+\label{sub:describe_local_replication_technologies}
 
+	\subsubsection{Host-based replication} % (fold)
+	\label{ssub:host_based_replication}
+		\begin{description}
+			\item[LVM-based replication] \hfill \\
+				The logical volume managers takes care for creating host-level logical volumes.
+				In a LVM-based replication,
+				each logical block in a logical volume is mapped to two physical blocks
+				on two different physical volumes.
+				An Application writing to a logical block now writes to two physical blocks.
+				This is known as \emph{LVM Mirroring}.
+
+				It adds some workload to the hosts CPU
+				and if the devices are already protected by a RAID
+				no addition protection is installed.
+				An advantage is the vendor independence
+				and as LVMs are usually part of the OS no additional licensing is necessary.
+			\item[File-System snapshot] \hfill \\
+				This FS snapshot is a prointer based replica,
+				that can be impelemented either on the FS or LVM level
+				and uses the Copy on First Write (CoFW) principle to create the snapshots.
+				It just reqires a fraction of the space used by the production FS.
+
+				When a snaphsot is created,
+				a bit and a blockmap are created in the metadata of the Snap FS.
+				When a write occurs on the production FS this is held.
+				The data previously on this postition is copied to the Snap FS.
+				The new data on this postion is then copied to the Snap FS.
+				The block and the bit map are changed to represent which data is stored.
+				Then the I/Os goes to the production OS.
+				%O RLY?
+		\end{description}
+	% subsubsection host_based_replication (end)
+
+% subsection describe_local_replication_technologies (end)
 \subsection{Research factors that determine storage capacity requirements for a save location in pointer-based virtual replication.} % (fold)
 \label{sub:research_factors_that_determine_storage_capacity_requirements_for_a_save_location_in_pointer_based_virtual_replication}
 
