@@ -1,24 +1,40 @@
 \section{Local Replication} % (fold)
 \label{sec:local_replication}
 
-\subsection{Research vairous techniques used to ensure consistency of a local replica.} % (fold)
-\label{sub:research_vairous_techniques_used_to_ensure_consistency_of_a_local_replica}
+\subsection{Research various techniques used to ensure consistency of a local replica.} % (fold)
+\label{sub:research_various_techniques_used_to_ensure_consistency_of_a_local_replica}
+	The easiest way to ensure consistency when performing a replication
+	is to hold all I/O to the data.
+	This is not always possible as,
+	request might time out.
+	However one can be sure that at the end of the replication,
+	the data is correctly replicated.
+	If this technique is applicable depends on the time it
+	takes to perform the replication.
 
-% subsection research_vairous_techniques_used_to_ensure_consistency_of_a_local_replica (end)
+	As I/O depends usually on a previous set of I/Os
+	it is also possible to capture all I/Os that occurred during the replication.
+	These I/Os are then also performed on the replica.
+	This ensures that data is still accessible and writable,
+	but the replica equals the data at the point in time
+	when the replica is finished.
+	One has to make sure to perform all dependent I/Os
+	and apply them in the correct order.
+% subsection research_various_techniques_used_to_ensure_consistency_of_a_local_replica (end)
 
 \subsection{Describe the uses of local replica in various business operations.} % (fold)
 \label{sub:describe_the_uses_of_local_replica_in_various_business_operations}
-
+	
 % subsection describe_the_uses_of_local_replica_in_various_business_operations (end)
 
-\subsection{Research factors that determine storage capacitz requirements for a save location in pointer-based virtual replication.} % (fold)
-\label{sub:research_factors_that_determine_storage_capacitz_requirements_for_a_save_location_in_pointer_based_virtual_replication}
+\subsection{Research factors that determine storage capacity requirements for a save location in pointer-based virtual replication.} % (fold)
+\label{sub:research_factors_that_determine_storage_capacity_requirements_for_a_save_location_in_pointer_based_virtual_replication}
 
-% subsection research_factors_that_determine_storage_capacitz_requirements_for_a_save_location_in_pointer_based_virtual_replication (end)
+% subsection research_factors_that_determine_storage_capacity_requirements_for_a_save_location_in_pointer_based_virtual_replication (end)
 
-\subsection{Researc continous data protection technologz and its benfits over array-based replication technologies.} % (fold)
-\label{sub:researc_continous_data_protection_technologz_and_its_benfits_over_array_based_replication_technologies}
+\subsection{Research continuous data protection technology and its benefits over array-based replication technologies.} % (fold)
+\label{sub:research_continuous_data_protection_technology_and_its_benefits_over_array_based_replication_technologies}
 
-% subsection researc_continous_data_protection_technologz_and_its_benfits_over_array_based_replication_technologies (end)
+% subsection research_continuous_data_protection_technology_and_its_benefits_over_array_based_replication_technologies (end)
 
 % section local_replication (end)
