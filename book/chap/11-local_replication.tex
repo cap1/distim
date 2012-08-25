@@ -73,7 +73,7 @@
 				The Point in time to which this replica corresponds is the time 
 				the replication is initiated.
 				In \emph{Copy on First Access} (CoFA) the data is copied to the replica,
-				if any changes are made to the procution host.
+				if any changes are made to the production host.
 				The data that is accessed or should be overwritten is the send to
 				the replica.
 
@@ -88,15 +88,27 @@
 		\end{description}
 	% subsubsection storage_array_based_local_replication (end)
 
-% subsection describe_local_replication_technologies (end)
-\subsection{Research factors that determine storage capacity requirements for a save location in pointer-based virtual replication.} % (fold)
-\label{sub:research_factors_that_determine_storage_capacity_requirements_for_a_save_location_in_pointer_based_virtual_replication}
-
-% subsection research_factors_that_determine_storage_capacity_requirements_for_a_save_location_in_pointer_based_virtual_replication (end)
-
 \subsection{Research continuous data protection technology and its benefits over array-based replication technologies.} % (fold)
 \label{sub:research_continuous_data_protection_technology_and_its_benefits_over_array_based_replication_technologies}
+	Continuous data protection (CDP) ensures a quick recovery
+	in the case of data loss or corruption.
+	Technologies RAID do not ensure that the data to recover to is valid.
+	If there is any logical corruption,
+	it is likely that it will spread to the mirrors.
 
+	Continuous data protection works using a write splitter
+	and a CDP appliance.
+	When data is changed,
+	the write splitter duplicates the I/O 
+	and sends one to the production volume
+	and the other one to the CDP appliance.
+	The CDP appliance logs all changes to the data
+	in a CDP journal along with a timestamp.
+	Depending on the size of the journal,
+	one can revert to all the changes that are still present in the journal.\\
+	To a replica,
+	that hast been generated before the CDP sessions started,
+	the recorded changes are send in regular intervals.
 % subsection research_continuous_data_protection_technology_and_its_benefits_over_array_based_replication_technologies (end)
 
 % section local_replication (end)
