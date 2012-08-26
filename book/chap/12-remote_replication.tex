@@ -23,8 +23,14 @@
 			the application when they were made at the production host
 			and on the remote replication site.
 		\item[Asynchronous replication] \hfill \\
-			
+			Depending on the buffer size and the connection the RPO can be near zero,
+			but never zero.
+			If the bandwith is a problem,
+			the buffer has to be larger enough to be ready for peaks.
 		\item[disk-buffered replication] \hfill \\
+			The RPO is usually in the order of hours,
+			as it takes time to create the local replica
+			and then send the data to the remote site.
 	\end{description}
 
 % subsection explain_the_rpo_that_can_be_achieved_with_remote_replication_techniques (end)
