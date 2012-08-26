@@ -3,7 +3,15 @@
 
 \subsection{What are the consideration for implementing synchronous remote replication} % (fold)
 \label{sub:what_are_the_consideration_for_implementing_synchronous_remote_replication}
-
+	The major advantage of synchronous remote replication is its zero RPO.
+	As changes are committed directly to the remote site,
+	it can be used as fall back in case of a failure at the production site.
+	Though it is important that the distances between production host
+	and remote site can not be extended over large distances.
+	Larger distances lead to a longer response time for the application,
+	which can be a problem depending on the type of application.
+	The distance is also determined by the connection between source and target
+	and the quality of the connection.
 % subsection what_are_the_consideration_for_implementing_synchronous_remote_replication (end)
 
 \subsection{Explain the RPO that can be achieved with remote replication techniques.} % (fold)
@@ -11,7 +19,11 @@
 
 	\begin{description}
 		\item[Synchronous replication] \hfill \\
+			Zero RPO, as changes to the data are only acknowledged to
+			the application when they were made at the production host
+			and on the remote replication site.
 		\item[Asynchronous replication] \hfill \\
+			
 		\item[disk-buffered replication] \hfill \\
 	\end{description}
 
