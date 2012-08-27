@@ -40,8 +40,19 @@
 
 	\begin{description}
 		\item[Multihop - synchronous + disk-buffered] \hfill \\
+			No further synchronisation can take place.
+			The RPO depends on the last synchronisation between the bunker
+			and the remote site.
+			It is usually in the order of hours.
 		\item[Multihop - synchronous + asynchronous] \hfill \\
+			No further synchronisation can take place.
+			The RPO depends on the last synchronisation between the bunker
+			and the remote site.
+			It is usually in the order of minutes.
 		\item[Multitarget] \hfill \\
+			Synchronisation will continue asynchronously.
+			The RPO denpends on the buffer size and connection
+			as described in section \ref{sub:explain_the_rpo_that_can_be_achieved_with_remote_replication_techniques}.
 	\end{description}
 
 % subsection discuss_the_effects_of_a_bunker_failure_in_a_three_site_replication (end)
