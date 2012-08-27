@@ -62,8 +62,17 @@
 
 	\begin{description}
 		\item[Multihop - synchronous + disk-buffered] \hfill \\
+			The bunker site can take over with a zero RPO.
+			If the bunker site also fails,
+			there is still a backup available at the remote site.
 		\item[Multihop - synchronous + asynchronous] \hfill \\
+			The bunker site can take over with a zero RPO.
+			If the bunker site also fails,
+			there is still a backup available at the remote site,
+			which has a lower RPO then the a disk-buffered remote site.
 		\item[Multitarget] \hfill \\
+			In case of a failure the bunker site can take over,
+			and the remote site can be used for asynchronous replication.
 	\end{description}
 
 % subsection discuss_the_effects_of_a_source_failure_in_a_three_site_replication_and_available_recover_options (end)
